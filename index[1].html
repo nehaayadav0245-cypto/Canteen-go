@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CanteenGo Plus | Smart Portion Ordering</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🍱 CanteenGo <small>PLUS</small></div>
+  <nav>
+    <button class="nav-btn active" onclick="showPage('studentPage',this)">Student Order</button>
+    <button class="nav-btn" onclick="showPage('canteenPage',this)">Canteen Dashboard</button>
+  </nav>
+</header>
+
+<main>
+<section id="studentPage" class="page">
+  <div class="hero">
+    <div>
+      <p class="tag">SMART PORTION • LESS WASTE • SHORTER QUEUES</p>
+      <h1>Order exactly what you need.</h1>
+      <p>Choose a portion, customize your meal, and collect it using a smart token.</p>
+    </div>
+    <div class="hero-icon">🥗</div>
+  </div>
+
+  <div class="feature-strip">
+    <div>🥄 <b>Portion choice</b><span>Small, regular or large</span></div>
+    <div>♻️ <b>Waste-aware</b><span>Order only what you need</span></div>
+    <div>⏱️ <b>Smart token</b><span>Priority and wait estimate</span></div>
+  </div>
+
+  <div class="section-title"><h2>Today's Menu</h2><span id="cartCount">0 items</span></div>
+  <div id="menuGrid" class="menu-grid"></div>
+
+  <div class="cart-card">
+    <div class="section-title"><h2>Your Cart</h2><button class="clear-btn" onclick="clearCart()">Clear</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-bottom"><strong>Total: ₹<span id="cartTotal">0</span></strong><button class="primary-btn" onclick="placeOrder()">Place Order</button></div>
+    <p id="studentMessage" class="message"></p>
+  </div>
+</section>
+
+<section id="canteenPage" class="page hidden">
+  <div class="dashboard-heading">
+    <div><p class="tag">STAFF PANEL</p><h1>Smart Canteen Dashboard</h1><p>View portions, allergies, priorities and order status.</p></div>
+    <button class="secondary-btn" onclick="resetOrders()">Reset Demo</button>
+  </div>
+  <div class="stats">
+    <div class="stat-card"><span>Pending</span><strong id="pendingCount">0</strong></div>
+    <div class="stat-card"><span>Preparing</span><strong id="preparingCount">0</strong></div>
+    <div class="stat-card"><span>Ready</span><strong id="readyCount">0</strong></div>
+    <div class="stat-card"><span>Collected</span><strong id="completedCount">0</strong></div>
+  </div>
+  <div class="priority-card"><h2>🧠 Smart Recommendation</h2><p id="priorityRecommendation">No pending orders yet.</p></div>
+  <div class="section-title"><h2>All Orders</h2><button class="clear-btn" onclick="clearCompleted()">Clear Completed</button></div>
+  <div id="ordersList"></div>
+</section>
+</main>
+<footer>© 2026 CanteenGo Plus | Portion-aware smart canteen prototype</footer>
+<script src="script.js"></script>
+</body>
+</html>
